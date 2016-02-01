@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSum(vector<int> &nums, int target) {
         unordered_map<int, int> map;
         vector<int> v;
         for (vector<int>::iterator it = nums.begin(); it != nums.end(); it++) {

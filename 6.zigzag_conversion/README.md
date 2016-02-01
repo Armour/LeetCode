@@ -1,3 +1,4 @@
 # Solution
 
-* Array/Vector O(n) - O(n^2)
+* Array O(n^2)
+* Vector O(n)
