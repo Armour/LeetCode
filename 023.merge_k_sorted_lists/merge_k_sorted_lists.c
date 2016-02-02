@@ -28,3 +28,18 @@ struct ListNode *mergeTwoLists(struct ListNode *l1, struct ListNode *l2) {
     }
     return dummy.next;
 }
+
+struct ListNode* mergeKLists(struct ListNode** lists, int listsSize) {
+    if (listsSize == 0)
+        return NULL;
+
+    int len = listsSize;
+    while (len > 1) {
+        int k = (len + 1) / 2;
+        for (int i = 0; i < len / 2; i++) {
+            lists[i] = mergeTwoLists(lists[i], lists[i + k]);
+        }
+        len = k;
+    }
+    return lists[0];
+}

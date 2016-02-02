@@ -5,7 +5,7 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode* oddEvenList(struct ListNode* head) {
+struct ListNode *oddEvenList(struct ListNode *head) {
     if (head == NULL || head->next == NULL) return head;
     struct ListNode *odd, *even;
     struct ListNode *st_odd, *st_even;

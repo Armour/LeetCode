@@ -5,7 +5,7 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode* partition(struct ListNode* head, int x) {
+struct ListNode *partition(struct ListNode *head, int x) {
     struct ListNode *less = malloc(sizeof(struct ListNode));
     struct ListNode *great = malloc(sizeof(struct ListNode));
     struct ListNode *lessHead = less;

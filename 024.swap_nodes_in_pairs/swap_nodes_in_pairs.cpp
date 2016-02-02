@@ -8,7 +8,7 @@
  */
 class Solution {
 public:
-    ListNode* swapPairs(ListNode* head) {
+    ListNode *swapPairs(ListNode *head) {
         ListNode dummy(0);
         dummy.next = head;
         ListNode *prev = &dummy;

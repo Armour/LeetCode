@@ -8,7 +8,7 @@
  */
 class Solution {
 public:
-    ListNode* oddEvenList(ListNode *head) {
+    ListNode *oddEvenList(ListNode *head) {
         if (head == NULL || head->next == NULL) return head;
         ListNode *odd, *even;
         ListNode *st_odd, *st_even;

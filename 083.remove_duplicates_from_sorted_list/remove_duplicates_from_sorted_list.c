@@ -6,10 +6,10 @@
  * };
  */
 struct ListNode *deleteDuplicates(struct ListNode *head) {
-    struct ListNode *ans = head;
     if (head == NULL) return head;
-    int value = head->val;
+    struct ListNode *ans = head;
     struct ListNode *prev = head;
+    int value = head->val;
     head = head->next;
     while (head != NULL) {
         if (head->val == value) {

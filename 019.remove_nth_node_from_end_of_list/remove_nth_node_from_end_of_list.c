@@ -5,7 +5,7 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
+struct ListNode *removeNthFromEnd(struct ListNode *head, int n) {
     int counter = 0;
     struct ListNode *slow = head;
     struct ListNode *fast = head;

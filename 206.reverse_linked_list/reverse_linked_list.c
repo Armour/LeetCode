@@ -5,7 +5,7 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode* reverseList(struct ListNode* head) {
+struct ListNode *reverseList(struct ListNode *head) {
     if (head == NULL) return head;
     struct ListNode *nextNode = head->next;
     int t = 0;

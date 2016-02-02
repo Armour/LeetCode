@@ -5,7 +5,7 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode* swapPairs(struct ListNode* head) {
+struct ListNode *swapPairs(struct ListNode *head) {
     struct ListNode dummy;
     dummy.val = 0;
     dummy.next = head;

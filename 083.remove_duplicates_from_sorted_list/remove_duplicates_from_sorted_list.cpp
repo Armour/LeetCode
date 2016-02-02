@@ -9,10 +9,10 @@
 class Solution {
 public:
     ListNode *deleteDuplicates(ListNode *head) {
-        ListNode *ans = head;
         if (head == NULL) return head;
-        int value = head->val;
+        ListNode *ans = head;
         ListNode *prev = head;
+        int value = head->val;
         head = head->next;
         while (head != NULL) {
             if (head->val == value) {
