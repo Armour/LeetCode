@@ -1,4 +1,4 @@
 # Solution
 
 * Linked list O(n)
-* Keep a 'prev' pointer
+* Two pointer, slow and fast

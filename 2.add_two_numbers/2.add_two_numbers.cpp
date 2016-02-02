@@ -7,35 +7,23 @@
  * };
  */
 class Solution {
-private:
-    ListNode *ans = new ListNode(0);
-    ListNode *tail = ans;
-    int last = 0;
 public:
-    void addNodeFromSum(int s) {
-            ListNode *newNode = new ListNode(s % 10);
-            tail->next = newNode;
-            tail = newNode;
-            last = s / 10;
-    }
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        while (l1 != NULL && l2 != NULL) {
-            addNodeFromSum(l1->val + l2->val + last);
-            l1 = l1->next;
-            l2 = l2->next;
-        }
-        while (l1 != NULL) {
-            addNodeFromSum(l1->val + last);
-            l1 = l1->next;
-        }
-        while (l2 != NULL) {
-            addNodeFromSum(l2->val + last);
-            l2 = l2->next;
-        }
-        if (last != 0) {
-            ListNode *newNode = new ListNode(last);
-            tail->next = newNode;
-            tail = newNode;
+        ListNode *ans = new ListNode(0);
+        ListNode *tail = ans;
+        int carry = 0;
+        while (l1 || l2 || carry) {
+            if (l1 != NULL) {
+                carry += l1->val;
+                l1 = l1->next;
+            }
+            if (l2 != NULL) {
+                carry += l2->val;
+                l2 = l2->next;
+            }
+            tail->next = new ListNode(carry % 10);
+            carry /= 10;
+            tail = tail->next;
         }
         return ans->next;
     }
