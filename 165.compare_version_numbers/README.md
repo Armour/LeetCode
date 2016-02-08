@@ -1,0 +1,3 @@
+# Solution
+
+* Split and compare
