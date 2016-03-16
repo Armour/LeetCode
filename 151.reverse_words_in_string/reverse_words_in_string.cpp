@@ -35,9 +35,7 @@ public:
         while (ed < len) {
             if (s[ed] == ' ') {
                 reverseRange(s, st, ed - 1);
-                while (ed < len && s[ed] == ' ') {
-                    ed++;
-                }
+                ed++;
                 st = ed;
             } else {
                 ed++;

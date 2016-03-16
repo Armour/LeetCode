@@ -15,11 +15,7 @@ public:
         split(version2, '.', v2);
         int i = 0;
         for (auto v: v1) {
-            int vv;
-            if (v2.size() <= i)
-                vv = 0;
-            else
-                vv = v2[i];
+            int vv = v2.size() <= i ? 0 : v2[i];
             if (v > vv)
                 return 1;
             else if (v < vv)
