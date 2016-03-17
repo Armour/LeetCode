@@ -1,12 +1,13 @@
 class Solution {
 public:
-    vector<int> &split(const string &s, char delim, vector<int> &elems) {
+    vector<int> &split(const string &s, char delim, vector<int> &ret) {
         stringstream ss(s);
-        string item;
-        while (getline(ss, item, delim)) {
-            elems.push_back(stoi(item));
+        string str;
+        while (getline(ss, str, delim)) {
+            if (str.compare("") != 0)
+                ret.push_back(stoi(str));
         }
-        return elems;
+        return ret;
     }
 
     int compareVersion(string version1, string version2) {
