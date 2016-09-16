@@ -1,29 +1,21 @@
 class Solution {
 public:
     string convert(string s, int numRows) {
-        vector< vector<char> > vv(numRows);
-        string res;
-        if (numRows == 1)
-            return s;
-        int p = 0;
-        int mark = 1;
+        if (numRows == 1) return s;
+        vector<vector<char>> zigzag(numRows);
+        int flag = -1;
+        int cur = 0;
         for (char ch: s) {
-            vv[p].push_back(ch);
-            if (mark) {
-                p++;
-                if (p == numRows - 1)
-                    mark = 0;
-            } else {
-                p--;
-                if (p == 0)
-                    mark = 1;
+            if (cur == numRows - 1 || cur == 0) flag = -flag;
+            zigzag[cur].push_back(ch);
+            cur += flag;
+        }
+        string str;
+        for (int num = 0; num < numRows; num++) {
+            for (char ch: zigzag[num]) {
+                str += ch;
             }
         }
-        for (auto i: vv) {
-            for (auto j: i) {
-                res += j;
-            }
-        }
-        return res;
+        return str;
     }
 };

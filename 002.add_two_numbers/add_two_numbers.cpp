@@ -22,8 +22,8 @@ public:
                 l2 = l2->next;
             }
             tail->next = new ListNode(carry % 10);
-            carry /= 10;
             tail = tail->next;
+            carry /= 10;
         }
         return ans->next;
     }

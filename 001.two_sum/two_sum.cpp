@@ -1,17 +1,19 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int> &nums, int target) {
-        unordered_map<int, int> map;
-        vector<int> v;
-        for (vector<int>::iterator it = nums.begin(); it != nums.end(); it++) {
-            int index = it - nums.begin() + 1;
-            if (map.find(target - *it) != map.end()) {
-                v.push_back(map.find(target - *it)->second);
-                v.push_back(index);
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int pos = 0;
+        map<int, int> m;
+        vector<int> res;
+        for (auto num: nums) {
+            if (m.find(target - num) != m.end()) {
+                res.push_back(min(m[target - num], pos));
+                res.push_back(max(m[target - num], pos));
+                break;
             } else {
-                map[*it] = index;
+                m[num] = pos;
             }
+            pos++;
         }
-        return v;
+        return res;
     }
 };
