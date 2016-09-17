@@ -9,14 +9,15 @@
  */
 class Solution {
 public:
-    bool checkValid(TreeNode *node, long min, long max) {
-        if (node == NULL) return true;
-        if (node->val <= min || node->val >= max) return false;
-        return checkValid(node->left, min, node->val) && checkValid(node->right, node->val, max);
+    bool validation(TreeNode *root, long lower, long upper) {
+        if (root == NULL) return true;
+        bool left = validation(root->left, lower, root->val);
+        bool right = validation(root->right, root->val, upper);
+        if (!left || !right) return false;
+        return root->val < upper && root->val > lower;
     }
 
-    bool isValidBST(TreeNode *root) {
-        if (root == NULL) return true;
-        return checkValid(root->left, LONG_MIN, root->val) && checkValid(root->right, root->val, LONG_MAX);
+    bool isValidBST(TreeNode* root) {
+        return validation(root, LONG_MIN, LONG_MAX);
     }
 };
