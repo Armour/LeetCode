@@ -1,3 +1,3 @@
 # Solution
 
-* Hash Map
+* Vote algorithm
