@@ -1,0 +1,3 @@
+# Solution
+
+* Use sum
