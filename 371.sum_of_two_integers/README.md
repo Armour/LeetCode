@@ -1,0 +1,3 @@
+# Solution
+
+* Bit manipulations
