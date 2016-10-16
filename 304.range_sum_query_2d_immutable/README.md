@@ -1,0 +1,3 @@
+# Solution
+
+* Sum array
