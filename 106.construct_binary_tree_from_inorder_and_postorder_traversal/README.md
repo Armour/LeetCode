@@ -1,0 +1,3 @@
+# Solution
+
+* Hashmap + recursively build
