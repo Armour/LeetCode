@@ -1,0 +1,4 @@
+# Solution
+
+* Stack
+* Scan twice
