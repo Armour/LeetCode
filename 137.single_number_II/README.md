@@ -1,0 +1,4 @@
+# Solution
+
+* Xor
+* State machine
