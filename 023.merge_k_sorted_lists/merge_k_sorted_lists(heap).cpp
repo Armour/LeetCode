@@ -6,13 +6,11 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+ class Solution {
 public:
-    struct Comp {
-        bool operator()(ListNode *a, ListNode *b) {
-            return a->val > b->val;
-        }
-    };
+    static bool comp(ListNode *a, ListNode *b) {
+        return a->val > b->val;
+    }
 
     ListNode *mergeKLists(vector<ListNode*> &lists) {
         vector<ListNode*> heap;
@@ -23,15 +21,15 @@ public:
             if (lists[i] != NULL)
                 heap.push_back(lists[i]);
         }
-        make_heap(heap.begin(), heap.end(), Comp());
+        make_heap(heap.begin(), heap.end(), comp);
         while (!heap.empty()) {
             p->next = heap.front();
             p = p->next;
-            pop_heap(heap.begin(), heap.end(), Comp());
+            pop_heap(heap.begin(), heap.end(), comp);
             heap.pop_back();
             if (p->next != NULL) {
                 heap.push_back(p->next);
-                push_heap(heap.begin(), heap.end(), Comp());
+                push_heap(heap.begin(), heap.end(), comp);
             }
         }
         return ans->next;
